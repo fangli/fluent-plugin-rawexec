@@ -26,11 +26,15 @@ module Fluent
     end
 
     config_param :command, :string
+    config_param :tag, :string, :default => nil
 
     def configure(conf)
       super
 
     def format(tag, time, record)
+      if @tag
+        record.merge!(@tag => tag)
+      end
       out = ''
       out << record.to_s
       out << "\n"
