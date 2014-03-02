@@ -30,6 +30,7 @@ module Fluent
 
     def configure(conf)
       super
+    end
 
     def format(tag, time, record)
       if @tag
