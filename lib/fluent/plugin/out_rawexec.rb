@@ -27,17 +27,11 @@ module Fluent
 
     config_param :command, :string
     config_param :tag, :string, :default => nil
-    config_param :prefix_trim, :string, :default => nil
 
     def configure(conf)
       super
 
     def format(tag, time, record)
-      if @prefix_trim
-        if tag.start_with?(@prefix_trim)
-          tag = tag[@prefix_trim.length,999999]
-        end
-      end
       if @tag
         record.merge!(@tag => tag)
       end
