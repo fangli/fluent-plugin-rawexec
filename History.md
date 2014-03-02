@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.0.4
+=====
+
+ - Use JSON instead of TSV
+
 0.0.3
 =====
 

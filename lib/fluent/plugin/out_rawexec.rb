@@ -37,7 +37,7 @@ module Fluent
         record.merge!(@tag => tag)
       end
       out = ''
-      out << record.to_s
+      out << Yajl::Encoder.encode(record)
       out << "\n"
       out
     end
